@@ -1,6 +1,9 @@
 import React, { ReactElement } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import { CacheProvider, ThemeProvider } from "@emotion/react";
+import theme from "./theme";
+import cacheRtl from "./rtl-plugin";
 
 type RouteType = {
   path: string;
@@ -16,19 +19,25 @@ export const routes: RouteType[] = [
 
 const Router = () => {
   return (
-    <BrowserRouter>
-        <Routes>
-          {routes.map((route) => (
-            <Route
-              key={route.path}
-              path={route.path}
-              element={
+    <CacheProvider value={cacheRtl}>
+      <ThemeProvider theme={theme}>
+      <div dir="rtl">
+        <BrowserRouter>
+          <Routes>
+            {routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={
                   route.element
-              }
-            />
-          ))}
-        </Routes>
-    </BrowserRouter>
+                }
+              />
+            ))}
+          </Routes>
+        </BrowserRouter>
+        </div>
+      </ThemeProvider>
+    </CacheProvider>
   );
 };
 
