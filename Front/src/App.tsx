@@ -5,6 +5,7 @@ import { CacheProvider, ThemeProvider } from "@emotion/react";
 import theme from "./theme";
 import cacheRtl from "./rtl-plugin";
 import Friends from "./pages/Friends/Friends";
+import AddFriend from "./pages/AddFriend/AddFriend";
 
 type RouteType = {
   path: string;
@@ -24,7 +25,7 @@ const Router = () => {
       <ThemeProvider theme={theme}>
       <div dir="rtl">
         <BrowserRouter>
-        <Friends />
+        <AddFriend />
           {/* <Routes>
             {routes.map((route) => (
               <Route

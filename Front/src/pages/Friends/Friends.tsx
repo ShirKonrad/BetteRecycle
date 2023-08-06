@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, IconButton, Button } from "@mui/material"
 import UserScoreCard from "../../components/UserScoreCard/UserScoreCard"
-import { AddBox, PersonAdd } from "@mui/icons-material"
+import { NotificationsActive, PersonAdd } from "@mui/icons-material"
 
 export default function Friends() {
 
@@ -86,10 +86,10 @@ export default function Friends() {
         <Box sx={{ py: 4 }}>
             <Box sx={{ display: "flex", justifyContent: "space-between", mx: 4 }}>
                 <IconButton>
-                    <AddBox />
+                    <PersonAdd />
                 </IconButton>
                 <IconButton>
-                    <PersonAdd />
+                    <NotificationsActive />
                 </IconButton>
                 <Button variant="contained" onClick={() => setShownScores("friends")}>Friends</Button>
                 <Button variant="contained" onClick={() => setShownScores("global")}>Global</Button>
