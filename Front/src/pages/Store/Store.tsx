@@ -8,7 +8,7 @@ interface Props {
 
 const Store: React.FC<Props> = (props: Props) => {
     const onProductClick  = (id: number) => {
-        console.log(id, "was selected")
+        console.log("product", id, "was selected");
     }
 
   return (
@@ -20,7 +20,7 @@ const Store: React.FC<Props> = (props: Props) => {
             (product) => product.availableAmount && product?.availableAmount > 0
           )
           .map((product) => {
-            return <ProductCard product={product} onProductClick={onProductClick}/>;
+            return <ProductCard key={product.id} product={product} onProductClick={onProductClick}/>;
           })}
       </div>
     </div>
