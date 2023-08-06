@@ -16,7 +16,7 @@ export const AppDataSource = new DataSource({
   password: "HackathonLogmar2023",
   port: 5432,
   type: 'postgres',
-  synchronize: true,
+  synchronize: false,
   logging: false,
   entities: [User, Recycle, BottleType, Coupon, Product],
 });
