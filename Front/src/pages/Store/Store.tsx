@@ -7,6 +7,10 @@ interface Props {
 }
 
 const Store: React.FC<Props> = (props: Props) => {
+    const onProductClick  = (id: number) => {
+        console.log(id, "was selected")
+    }
+
   return (
     <div className="store">
       <h2 className="store__header">חנות</h2>
@@ -16,7 +20,7 @@ const Store: React.FC<Props> = (props: Props) => {
             (product) => product.availableAmount && product?.availableAmount > 0
           )
           .map((product) => {
-            return <ProductCard product={product} />;
+            return <ProductCard product={product} onProductClick={onProductClick}/>;
           })}
       </div>
     </div>

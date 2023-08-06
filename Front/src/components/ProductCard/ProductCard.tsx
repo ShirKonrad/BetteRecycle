@@ -3,6 +3,7 @@ import "./ProductCard.css";
 
 interface Props {
   product: IProduct;
+  onProductClick: (prodId: number) => void;
 }
 
 const ProductCard: React.FC<Props> = (props: Props) => {
@@ -21,7 +22,7 @@ const ProductCard: React.FC<Props> = (props: Props) => {
             מחיר: {props.product.price}
           </span>
         </div>
-        <button className="btn bg-primary productCard__btn">קנה</button>
+        <button className="btn bg-primary productCard__btn" onClick={() => props.onProductClick(props.product.id)}>קנה</button>
       </div>
     </div>
   );
