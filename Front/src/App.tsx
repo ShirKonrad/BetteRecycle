@@ -6,6 +6,7 @@ import theme from "./theme";
 import cacheRtl from "./rtl-plugin";
 import Friends from "./pages/Friends/Friends";
 import AddFriend from "./pages/AddFriend/AddFriend";
+import FriendRequests from "./pages/FriendRequests/FriendRequests";
 
 type RouteType = {
   path: string;
@@ -25,7 +26,7 @@ const Router = () => {
       <ThemeProvider theme={theme}>
       <div dir="rtl">
         <BrowserRouter>
-        <AddFriend />
+        <FriendRequests />
           {/* <Routes>
             {routes.map((route) => (
               <Route
