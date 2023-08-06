@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
-import Store from "./pages/Store/Store";
+import Store from "./pages/Cart/Cart";
 import { CacheProvider, ThemeProvider } from "@emotion/react";
 import theme from "./theme";
 import cacheRtl from "./rtl-plugin";

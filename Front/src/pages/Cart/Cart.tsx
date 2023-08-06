@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Store.css";
+import "./Cart.css";
 import Product from "../../components/Product/Product";
 
 const products = [
