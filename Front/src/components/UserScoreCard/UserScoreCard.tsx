@@ -2,6 +2,7 @@ import { Paper, Typography } from "@mui/material"
 import React from "react"
 
 export default function UserScoreCard(props: any) {
+
     return (
         <Paper sx={{
             display: "flex",
