@@ -1,0 +1,51 @@
+.btn {
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+  
+  .btn:active {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn:disabled {
+    background: var(--secondary-text-color);
+    cursor: not-allowed;
+  }
+  
+  .btn:disabled:hover {
+    transform: none;
+    filter: none;
+  }
+  
+  .input {
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .bg-primary {
+    background: var(--primary-bg-color);
+  }
+  
+  .bg-secondary {
+    background-color: var(--secondary-bg-color);
+  }
