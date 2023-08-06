@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import { CacheProvider, ThemeProvider } from "@emotion/react";
 import theme from "./theme";
 import cacheRtl from "./rtl-plugin";
+import Friends from "./pages/Friends/Friends";
 
 type RouteType = {
   path: string;
@@ -23,6 +24,7 @@ const Router = () => {
       <ThemeProvider theme={theme}>
       <div dir="rtl">
         <BrowserRouter>
+        <Friends />
           <Routes>
             {routes.map((route) => (
               <Route

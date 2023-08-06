@@ -4,7 +4,7 @@ import React from "react"
 
 export default function TopBar () {
     return (
-        <AppBar>
+        <AppBar position="sticky">
             <Box sx={{ 
                     display:"flex",
                     justifyContent:"space-between",
