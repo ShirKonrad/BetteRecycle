@@ -6,6 +6,7 @@ import Store from "./pages/Store/Store";
 import { CacheProvider, ThemeProvider } from "@emotion/react";
 import theme from "./theme";
 import cacheRtl from "./rtl-plugin";
+import { Height } from "@mui/icons-material";
 
 type RouteType = {
   path: string;
@@ -18,7 +19,7 @@ export const routes: RouteType[] = [
     element: <Home />,
   },
   {
-    path: "/store",
+    path: "/cart",
     element: <Store />,
   },
 ];
@@ -27,7 +28,7 @@ const Router = () => {
   return (
     <CacheProvider value={cacheRtl}>
       <ThemeProvider theme={theme}>
-        <div dir="rtl">
+        <div className="app" dir="rtl">
           <BrowserRouter>
             <Routes>
               {routes.map((route) => (
@@ -39,6 +40,7 @@ const Router = () => {
               ))}
             </Routes>
           </BrowserRouter>
+          <Navbar />
         </div>
       </ThemeProvider>
     </CacheProvider>

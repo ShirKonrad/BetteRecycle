@@ -1,27 +1,35 @@
 import React, { useEffect, useRef, useState } from "react";
-import { BottomNavigation, BottomNavigationAction } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
+import { BottomNavigation, BottomNavigationAction } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
 import "./Navbar.css";
-import { green } from "@mui/material/colors";
 
 interface Props {}
 
 const Navbar: React.FC<Props> = (props: Props) => {
-
-    const [currentRoute, setRoute] = useState('Home');
+  const [currentRoute, setRoute] = useState("Home");
 
   return (
     <BottomNavigation
-    value={currentRoute}
-  onChange={(event, newValue) => {
-    setRoute(newValue);
-  }}
-  showLabels
->
-  <BottomNavigationAction label="בית" icon={<HomeIcon />} />
-  <BottomNavigationAction label="חנות" icon={<HomeIcon />} />
-  <BottomNavigationAction label="חברים" icon={<HomeIcon />} />
-</BottomNavigation>
+      className="navbar"
+      value={currentRoute}
+      onChange={(event, newValue) => {
+        setRoute(newValue);
+        window.location.href = `http://localhost:3000${newValue}`;
+      }}
+      showLabels
+    >
+      <BottomNavigationAction label="בית" value={""} icon={<HomeIcon />} />
+      <BottomNavigationAction
+        label="חנות"
+        value={"/cart"}
+        icon={<HomeIcon />}
+      />
+      <BottomNavigationAction
+        label="חברים"
+        value={"/store"}
+        icon={<HomeIcon />}
+      />
+    </BottomNavigation>
   );
 };
 

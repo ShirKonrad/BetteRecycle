@@ -1,0 +1,32 @@
+.product{
+   border: solid 1px black;
+   margin-top: 0.5em;
+   height: 3em;
+   position: relative;
+}
+
+img{
+    border-radius: 3em;
+    height: 3em;
+    width: 3em;
+    margin-right: 0.4em;
+}
+
+.header{
+    margin-top: -3em;
+    margin-right: 3.8em;
+    position: absolute;
+}
+.amount{
+    margin-top: -2em;
+    margin-right: 4.7em;
+    position: absolute;
+    font-size: small;
+}
+
+.price{
+    margin-top: 0.45em;
+    margin-right: 14.7em;
+    position: absolute;
+    width: 6em;
+}
