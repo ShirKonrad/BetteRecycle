@@ -5,7 +5,12 @@ import React from "react"
 export default function TopBar () {
     return (
         <AppBar>
-            <Box sx={{ display:"flex", justifyContent:"space-between" }}>
+            <Box sx={{ 
+                    display:"flex",
+                    justifyContent:"space-between",
+                    alignItems: "center",
+                    p: 1,
+                }}>
                 <Box>
                     <Box sx={{ display:"flex" }}>
                         <MilitaryTech />
