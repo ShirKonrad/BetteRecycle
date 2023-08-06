@@ -38,7 +38,10 @@ interface Props {}
 const Store: React.FC<Props> = (props: Props) => {
   return (
     <div>
-      <div className="head">ההטבות שלי</div>
+      <div className="head">
+        <p className="headText">ההטבות שלי</p>
+        <div className="headCircle">{products.length}</div>
+      </div>
 
       {products.map((product) => (
         <Product
