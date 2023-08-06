@@ -1,0 +1,11 @@
+.qr-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-box {
+  width: clamp(400px, 50%, 500px);
+}
