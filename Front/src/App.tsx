@@ -25,7 +25,7 @@ const Router = () => {
       <div dir="rtl">
         <BrowserRouter>
         <Friends />
-          <Routes>
+          {/* <Routes>
             {routes.map((route) => (
               <Route
                 key={route.path}
@@ -35,7 +35,7 @@ const Router = () => {
                 }
               />
             ))}
-          </Routes>
+          </Routes> */}
         </BrowserRouter>
         </div>
       </ThemeProvider>

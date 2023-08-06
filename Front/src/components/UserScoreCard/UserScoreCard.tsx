@@ -11,9 +11,10 @@ export default function UserScoreCard(props: any) {
             px: 1,
             py:  props.isUser ? 3 : 2 ,
             my: 1,
+            bgColor: "primary.main"
         }}>
-            <Typography>Avig Alon</Typography>
-            <Typography>831</Typography>
+            <Typography>{ props.name }</Typography>
+            <Typography>{ props.points }</Typography>
         </Paper>
     )
 }
