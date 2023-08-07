@@ -4,8 +4,8 @@ import React from "react"
 
 export default function TopBar () {
     return (
-        <>
-        <AppBar sx={{backgroundColor: "var(--primary-bg-color2)"}}>
+        <Box>
+        <AppBar position="sticky" sx={{backgroundColor: "var(--primary-bg-color2)"}}>
             <Box sx={{ 
                     display:"flex",
                     justifyContent:"space-between",
@@ -28,6 +28,6 @@ export default function TopBar () {
             </Box>
         </AppBar>
         <MuiToolbar  sx={{ marginBottom: "1vh" }} />
-        </>
+        </Box>
     )
 }
