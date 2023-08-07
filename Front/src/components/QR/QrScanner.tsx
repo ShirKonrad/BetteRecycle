@@ -9,7 +9,7 @@ export default function QrScanner() {
     const scanner = new Html5QrcodeScanner(
       "reader",
       {
-        qrbox: 300,
+        qrbox: window.innerWidth / 4,
         fps: 5,
       },
       true
