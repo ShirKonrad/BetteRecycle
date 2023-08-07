@@ -5,24 +5,30 @@ import { useLocation, useNavigate } from "react-router-dom";
 // import Store from "../../pages/Store/Store";
 // import Home from "../../pages/Home/Home";
 // import Cart from "../../pages/Cart/Cart";
-import LocalMallIcon from '@mui/icons-material/LocalMall';
-import HomeIcon from '@mui/icons-material/Home';
-import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
-import PeopleIcon from '@mui/icons-material/People';
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+import HomeIcon from "@mui/icons-material/Home";
+import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
+import PeopleIcon from "@mui/icons-material/People";
 import { routes } from "../../App";
+import { Recycling } from "@mui/icons-material";
 
 interface Props {}
 
 const actions = [
+  {
+    label: "בית",
+    icon: <HomeIcon />,
+    to: "/",
+  },
   {
     label: "ההטבות שלי",
     icon: <LocalMallIcon />,
     to: "/cart",
   },
   {
-    label: "בית",
-    icon: <HomeIcon />,
-    to: "/",
+    label: "סריקת בקבוקים",
+    icon: <Recycling />,
+    to: "/scan",
   },
   {
     label: "חנות",
@@ -33,7 +39,7 @@ const actions = [
     label: "Community",
     icon: <PeopleIcon />,
     to: "/friends",
-  }
+  },
 ];
 
 const Navbar: React.FC<Props> = (props: Props) => {
@@ -65,7 +71,6 @@ const Navbar: React.FC<Props> = (props: Props) => {
     setValue((prev) => (actionIndex >= 0 ? actionIndex : prev));
   }, [location.pathname]);
 
-
   return (
     <BottomNavigation
       value={currentRoute}
@@ -82,16 +87,15 @@ const Navbar: React.FC<Props> = (props: Props) => {
           color: "var(--primary-bg-color2)",
         },
       }}
-      showLabels
-    >
+      showLabels>
       {actions.map((action) => (
-          <BottomNavigationAction
-            key={action.to}
-            id={action.label}
-            label={action.label}
-            icon={action.icon}
-          />
-        ))}
+        <BottomNavigationAction
+          key={action.to}
+          id={action.label}
+          label={action.label}
+          icon={action.icon}
+        />
+      ))}
     </BottomNavigation>
   );
 };
