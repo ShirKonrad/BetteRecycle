@@ -5,14 +5,14 @@ const theme = createTheme({
   // typography: {
   //   fontFamily: "Rubik",
   // },
-  // palette: {
-  //   primary: {
-  //     main: "#44f1a6"
-  //   },
-  //   secondary: {
-  //     main: "#000000"
-  //   }
-  // },
+  palette: {
+    primary: {
+      main: "#08af66"
+    },
+    secondary: {
+      main: "#000000"
+    }
+  },
   // components: {
     // MuiFormHelperText: {
     //   styleOverrides: {

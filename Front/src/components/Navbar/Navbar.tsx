@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import HomeIcon from '@mui/icons-material/Home';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
+import PeopleIcon from '@mui/icons-material/People';
 import { routes } from "../../App";
 
 interface Props {}
@@ -28,6 +29,11 @@ const actions = [
     icon: <LocalGroceryStoreIcon />,
     to: "/store",
   },
+  {
+    label: "Community",
+    icon: <PeopleIcon />,
+    to: "/friends",
+  }
 ];
 
 const Navbar: React.FC<Props> = (props: Props) => {

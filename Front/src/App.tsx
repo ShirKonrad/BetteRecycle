@@ -6,6 +6,9 @@ import Cart from "./pages/Cart/Cart";
 import { CacheProvider, ThemeProvider } from "@emotion/react";
 import theme from "./theme";
 import cacheRtl from "./rtl-plugin";
+import Friends from "./pages/Friends/Friends";
+import AddFriend from "./pages/AddFriend/AddFriend";
+import FriendRequests from "./pages/FriendRequests/FriendRequests";
 import { Height } from "@mui/icons-material";
 import Store from "./pages/Store/Store";
 import "./general.css";
@@ -17,6 +20,8 @@ type RouteType = {
   path: string;
   element: ReactElement;
 };
+
+
 
 export const routes: RouteType[] = [
   {
@@ -30,6 +35,18 @@ export const routes: RouteType[] = [
   {
     path: "/store",
     element: <Store />,
+  },
+  {
+    path: "/friends",
+    element: <Friends />,
+  },
+  {
+    path: "/friends/add",
+    element: <AddFriend />,
+  },
+  {
+    path: "/friends/requests",
+    element: <FriendRequests />,
   },
 ];
 

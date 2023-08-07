@@ -7,7 +7,7 @@ export default function TopBar() {
   const {user} = useContext(UserContext);
   return (
     <>
-      <AppBar sx={{ backgroundColor: "var(--primary-bg-color2)" }}>
+      <AppBar position="sticky" sx={{backgroundColor: "var(--primary-bg-color2)"}}>
         <Box
           sx={{
             display: "flex",
