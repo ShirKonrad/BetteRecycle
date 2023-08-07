@@ -2,6 +2,7 @@ import React from "react"
 import { Box, IconButton, Button } from "@mui/material"
 import UserScoreCard from "../../components/UserScoreCard/UserScoreCard"
 import { NotificationsActive, PersonAdd } from "@mui/icons-material"
+import { Link } from "react-router-dom"
 
 export default function Friends() {
 
@@ -85,10 +86,10 @@ export default function Friends() {
     return (
         <Box sx={{ py: 4 }}>
             <Box sx={{ display: "flex", justifyContent: "space-between", mx: 4 }}>
-                <IconButton>
+                <IconButton LinkComponent={Link} href="/friends/add">
                     <PersonAdd />
                 </IconButton>
-                <IconButton>
+                <IconButton LinkComponent={Link} href="/friends/requests">
                     <NotificationsActive />
                 </IconButton>
                 <Button variant="contained" onClick={() => setShownScores("friends")}>Friends</Button>
