@@ -1,0 +1,27 @@
+.head{
+    background-color: lightgreen;
+    height: 3rem;
+    position: relative;
+}
+.headText{
+    color: white;
+    margin-top: 0.5em;
+    margin-right: 0.4em;
+    position: absolute;
+    text-shadow: 1px 1px black;
+    font-size: large;
+}
+
+.headCircle{
+    background-color: white;
+    margin-right: 18.4em;
+    margin-top: 0.5em;
+    position: absolute;
+    border-radius: 4em;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0.6px 0.6px grey;
+}
