@@ -10,7 +10,8 @@ import { Height } from "@mui/icons-material";
 import Store from "./pages/Store/Store";
 import "./general.css";
 import TopBar from "./components/TopBar/TopBar";
-import "./App.css"
+import "./App.css";
+import UserContextProvider from "./contexts/userContext";
 
 type RouteType = {
   path: string;
@@ -37,29 +38,28 @@ const Router = () => {
     <div className="app">
       <CacheProvider value={cacheRtl}>
         <ThemeProvider theme={theme}>
-          {/* <div dir="rtl"> */}
+          <UserContextProvider>
             <BrowserRouter>
-            <TopBar/>
-            <div className="app__content">
+              <TopBar />
+              <div className="app__content">
                 <Routes>
                   {routes.map((route) => (
                     <Route
-                    key={route.path}
-                    path={route.path}
-                    element={route.element}
+                      key={route.path}
+                      path={route.path}
+                      element={route.element}
                     />
-                    ))}
+                  ))}
                 </Routes>
               </div>
               <div className="app__bottom">
                 <Navbar />
               </div>
             </BrowserRouter>
-          {/* </div> */}
+          </UserContextProvider>
         </ThemeProvider>
       </CacheProvider>
     </div>
-
   );
 };
 

@@ -5,7 +5,6 @@ interface Props {
   name: string;
   price: number;
   amount?: number;
-  expartionDate?: Date;
   image: string;
 }
 
@@ -20,13 +19,6 @@ const Product: React.FC<Props> = (props: Props) => {
 
       {props.amount ? (
         <p className="product__amount product__niceText">כמות: {props.amount}</p>
-      ) : (
-        <></>
-      )}
-      {props.expartionDate ? (
-        <p className="product__amount product__niceText">
-          תקף עד: {props.expartionDate.toLocaleDateString()}
-        </p>
       ) : (
         <></>
       )}
