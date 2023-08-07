@@ -1,14 +1,13 @@
 import { AppBar, Box, Typography, Toolbar as MuiToolbar } from "@mui/material";
 import { MilitaryTech, Toll } from "@mui/icons-material";
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../../contexts/userContext";
 
 export default function TopBar() {
+  const {user} = useContext(UserContext);
   return (
-    <Box>
-      <AppBar
-        position="sticky"
-        sx={{ backgroundColor: "var(--primary-bg-color2)" }}
-      >
+    <>
+      <AppBar position="sticky" sx={{backgroundColor: "var(--primary-bg-color2)"}}>
         <Box
           sx={{
             display: "flex",
@@ -20,11 +19,11 @@ export default function TopBar() {
           <Box>
             <Box sx={{ display: "flex" }}>
               <MilitaryTech />
-              <Typography>152</Typography>
+              <Typography>{user.score}</Typography>
             </Box>
             <Box sx={{ display: "flex" }}>
               <Toll />
-              <Typography>38</Typography>
+              <Typography>{user.credit}</Typography>
             </Box>
           </Box>
           <Box>
@@ -32,7 +31,7 @@ export default function TopBar() {
           </Box>
         </Box>
       </AppBar>
-      <MuiToolbar sx={{ marginBottom: "1vh" }} />
-    </Box>
+      {/* <MuiToolbar sx={{ marginBottom: "1vh" }} /> */}
+    </>
   );
 }

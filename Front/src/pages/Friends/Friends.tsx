@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, IconButton, Button } from "@mui/material";
 import UserScoreCard from "../../components/UserScoreCard/UserScoreCard";
 import { NotificationsActive, PersonAdd } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../contexts/userContext";
 
-export default function Friends() {
-  // Everything i write is in English instead of hebrew
-  // because i can't change languages with this
-  // FUCKING CHROMEBOOK
+interface Props {}
 
+const Friends: React.FC<Props> = (props: Props) => {
+  const { user } = useContext(UserContext);
+  
   const friendsMock = [
     {
       name: "שיר קונרד",
@@ -102,7 +103,7 @@ export default function Friends() {
       {shownScores === "friends" && (
         <Box>
           <Box sx={{ mb: 6 }}>
-            <UserScoreCard name="אביב אלון" points={831} isUser={true} />
+            <UserScoreCard name={user.name} points={user.score} isUser={true} />
           </Box>
           <Box>{friendCards}</Box>
         </Box>
@@ -111,10 +112,12 @@ export default function Friends() {
         <Box>
           <Box sx={{ mb: 3 }}>{globalCards}</Box>
           <Box>
-            <UserScoreCard name="אביב אלון" points={831} isUser={true} />
+            <UserScoreCard name={user.name} points={user.score} isUser={true} />
           </Box>
         </Box>
       )}
     </Box>
   );
-}
+};
+
+export default Friends;

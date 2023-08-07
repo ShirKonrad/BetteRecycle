@@ -7,18 +7,13 @@ import { useNavigate } from "react-router-dom";
 export default function FriendRequests() {
   const [names, setNames] = React.useState<string[]>(["בילי", "יוני", "קובי"]);
 
+    const requestCards = names.map((name, index) => (
+        <FriendRequestCard key={index} name={name} accept={() => removeRequest(name)} reject={() => removeRequest(name)} />
+    ))
   // Filler just to make things look like they work
   const removeRequest = (name: string) => {
     setNames((prev) => prev.filter((arrName) => arrName !== name));
   };
-
-  const requestCards = names.map((name) => (
-    <FriendRequestCard
-      name={name}
-      accept={() => removeRequest(name)}
-      reject={() => removeRequest(name)}
-    />
-  ));
 
   const navigate = useNavigate();
 

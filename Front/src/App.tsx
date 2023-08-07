@@ -14,6 +14,7 @@ import Store from "./pages/Store/Store";
 import "./general.css";
 import TopBar from "./components/TopBar/TopBar";
 import "./App.css";
+import UserContextProvider from "./contexts/userContext";
 import Scanner from "./pages/Scanner/Scanner";
 
 type RouteType = {
@@ -57,25 +58,25 @@ const Router = () => {
     <div className="app">
       <CacheProvider value={cacheRtl}>
         <ThemeProvider theme={theme}>
-          {/* <div dir="rtl"> */}
-          <BrowserRouter>
-            <TopBar />
-            <div className="app__content">
-              <Routes>
-                {routes.map((route) => (
-                  <Route
-                    key={route.path}
-                    path={route.path}
-                    element={route.element}
-                  />
-                ))}
-              </Routes>
-            </div>
-            <div className="app__bottom">
-              <Navbar />
-            </div>
-          </BrowserRouter>
-          {/* </div> */}
+          <UserContextProvider>
+            <BrowserRouter>
+              <TopBar />
+              <div className="app__content">
+                <Routes>
+                  {routes.map((route) => (
+                    <Route
+                      key={route.path}
+                      path={route.path}
+                      element={route.element}
+                    />
+                  ))}
+                </Routes>
+              </div>
+              <div className="app__bottom">
+                <Navbar />
+              </div>
+            </BrowserRouter>
+          </UserContextProvider>
         </ThemeProvider>
       </CacheProvider>
     </div>

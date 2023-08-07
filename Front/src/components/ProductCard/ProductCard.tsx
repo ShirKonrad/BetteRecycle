@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./ProductCard.css";
+import { UserContext } from "../../contexts/userContext";
 
 interface Props {
   product: IProduct;
@@ -7,6 +8,7 @@ interface Props {
 }
 
 const ProductCard: React.FC<Props> = (props: Props) => {
+  const { user } = useContext(UserContext);
   return (
     <div className="productCard">
       <img className="productCard__img" src={props.product.image} />
@@ -22,7 +24,13 @@ const ProductCard: React.FC<Props> = (props: Props) => {
             מחיר: {props.product.price}
           </span>
         </div>
-        <button className="btn bg-primary productCard__btn" onClick={() => props.onProductClick(props.product.id)}>קנה</button>
+        <button
+          className="btn bg-primary productCard__btn"
+          onClick={() => props.onProductClick(props.product.id)}
+          disabled={user.credit < props.product.price}
+        >
+          קנה
+        </button>
       </div>
     </div>
   );
