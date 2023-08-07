@@ -1,0 +1,73 @@
+.flip-card {
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+     /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    transform: rotateY(180deg);
+    position: absolute;
+    margin-right: 4.4em;
+    margin-top: -2.4em;
+  }
+
+.product{
+   border: solid 1.5px lightgreen;
+   margin-top: 0.5em;
+   height: 3em;
+   position: relative;
+}
+
+.product__img{
+    border-radius: 3em;
+    height: 2.7em;
+    width: 2.7em;
+    margin-right: 0.4em;
+    border: 2px lightgreen solid;
+}
+
+.product__header{
+    margin-top: -3em;
+    margin-right: 3.8em;
+    position: absolute;
+}
+.product__amount{
+    margin-top: -2em;
+    margin-right: 4.7em;
+    position: absolute;
+    font-size: small;
+}
+
+.product__price{
+    margin-top: 0.45em;
+    margin-right: 14.7em;
+    position: absolute;
+    width: 6em;
+    border-radius: 4em;
+    border: 2px lightgreen solid;
+}
+
+.product__niceText{
+    text-shadow: 0.5px 0.5px grey;
+    color: black;
+}
