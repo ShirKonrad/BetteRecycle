@@ -7,12 +7,14 @@ const products = [
     name: "עציץ כלשהו",
     price: 50.0,
     amount: 1,
+    code: "6ABD57",
     image:
       "C:/Users/yahel/OneDrive/שולחן העבודה/BetteRecycle/Front/src/assets/Images/Tsadkani.jpg",
   },
   {
     name: "הופעה כלשהי",
     price: 80,
+    code: "6ABD57",
     expartionDate: new Date(),
     image:
       "C:/Users/yahel/OneDrive/שולחן העבודה/BetteRecycle/Front/src/assets/Images/Tsadkani.jpg",
@@ -21,12 +23,14 @@ const products = [
     name: "שולחן כלשהו",
     price: 250,
     amount: 1,
+    code: "6ABD57",
     image:
       "C:/Users/yahel/OneDrive/שולחן העבודה/BetteRecycle/Front/src/assets/Images/Tsadkani.jpg",
   },
   {
     name: "עוד הופעה כלשהי",
     price: 110.0,
+    code: "6ABD57",
     expartionDate: new Date(),
     image:
       "C:/Users/yahel/OneDrive/שולחן העבודה/BetteRecycle/Front/src/assets/Images/Tsadkani.jpg",
@@ -51,6 +55,7 @@ const Cart: React.FC<Props> = (props: Props) => {
           amount={product.amount}
           expartionDate={product.expartionDate}
           image={product.image}
+          code={product.code}
         />
       ))}
     </div>
