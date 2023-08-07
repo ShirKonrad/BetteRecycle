@@ -1,9 +1,12 @@
 import React, { ReactElement } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import Cart from "./pages/Cart/Cart";
 import { CacheProvider, ThemeProvider } from "@emotion/react";
 import theme from "./theme";
 import cacheRtl from "./rtl-plugin";
+import { Height } from "@mui/icons-material";
 import Store from "./pages/Store/Store";
 import "./general.css";
 import TopBar from "./components/TopBar/TopBar";
@@ -77,6 +80,10 @@ export const routes: RouteType[] = [
     element: <Home />,
   },
   {
+    path: "/cart",
+    element: <Cart />,
+  },
+  {
     path: "/store",
     element: <Store products={products} />,
   },
@@ -104,6 +111,7 @@ const Router = () => {
               {/* BottomTollbar component */}
             </div>
           </BrowserRouter>
+          <Navbar />
         </div>
       </ThemeProvider>
     </CacheProvider>
