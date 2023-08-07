@@ -1,10 +1,11 @@
-import { AppBar, Box, Typography } from "@mui/material"
+import { AppBar, Box, Typography, Toolbar as MuiToolbar } from "@mui/material"
 import { MilitaryTech, Toll } from "@mui/icons-material"
 import React from "react"
 
 export default function TopBar () {
     return (
-        <AppBar>
+        <Box>
+        <AppBar position="sticky" sx={{backgroundColor: "var(--primary-bg-color2)"}}>
             <Box sx={{ 
                     display:"flex",
                     justifyContent:"space-between",
@@ -26,5 +27,7 @@ export default function TopBar () {
                 </Box>
             </Box>
         </AppBar>
+        <MuiToolbar  sx={{ marginBottom: "1vh" }} />
+        </Box>
     )
 }

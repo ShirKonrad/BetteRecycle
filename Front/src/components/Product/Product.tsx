@@ -15,27 +15,34 @@ const Product: React.FC<Props> = (props: Props) => {
     <div className="flip-card">
       <div className="product flip-card-inner">
         <img
-          src={require(`C:/Users/yahel/OneDrive/שולחן העבודה/BetteRecycle/Front/src/assets/Images/Tsadkani.jpg`)}
+          className="product__img flip-card-front"
+          src={`https://medias.hashulchan.co.il/www/uploads/2020/12/shutterstock_658408219-600x600.jpg`}
           alt="ma"
         />
-        <p className="header niceText">{props.name}</p>
+        <p className="product__header product__niceText flip-card-front">
+          {props.name}
+        </p>
 
         {props.amount ? (
-          <p className="amount niceText">כמות: {props.amount}</p>
+          <p className="product__amount product__niceText flip-card-front">
+            כמות: {props.amount}
+          </p>
         ) : (
           <></>
         )}
         {props.expartionDate ? (
-          <p className="amount niceText">
+          <p className="product__amount product__niceText flip-card-front">
             תקף עד: {props.expartionDate.toLocaleDateString()}
           </p>
         ) : (
           <></>
         )}
 
-        <button className="price niceText flip-card-front">מימוש ההטבה</button>
+        <button className="product__price product__niceText flip-card-front">
+          מימוש ההטבה
+        </button>
 
-        <div className="flip-card-back">הקוד שלך: {props.code}</div>
+        <div className="flip-card-back">קוד למימוש ההטבה:{props.code}</div>
       </div>
     </div>
   );
