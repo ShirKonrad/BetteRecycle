@@ -2,7 +2,7 @@ import React from "react"
 import { Box, IconButton, Button } from "@mui/material"
 import UserScoreCard from "../../components/UserScoreCard/UserScoreCard"
 import { NotificationsActive, PersonAdd } from "@mui/icons-material"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function Friends() {
 
@@ -73,6 +73,8 @@ export default function Friends() {
         },
     ]
 
+    const navigate = useNavigate();
+
     const [shownScores, setShownScores] = React.useState<string>("friends")
 
     const friendCards = friendsMock.map((friend) => (
@@ -84,12 +86,12 @@ export default function Friends() {
     ))
 
     return (
-        <Box sx={{ py: 4 }}>
+        <Box sx={{ py: 3 }}>
             <Box sx={{ display: "flex", justifyContent: "space-between", mx: 4 }}>
-                <IconButton LinkComponent={Link} href="/friends/add">
+                <IconButton onClick={() => navigate("/friends/add")}>
                     <PersonAdd />
                 </IconButton>
-                <IconButton LinkComponent={Link} href="/friends/requests">
+                <IconButton onClick={() => navigate("/friends/requests")}>
                     <NotificationsActive />
                 </IconButton>
                 <Button variant="contained" onClick={() => setShownScores("friends")}>Friends</Button>

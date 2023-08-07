@@ -2,18 +2,18 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   direction: "rtl",
-  typography: {
-    fontFamily: "Rubik",
-  },
+  // typography: {
+  //   fontFamily: "Rubik",
+  // },
   palette: {
     primary: {
-      main: "#44f1a6"
+      main: "#08af66"
     },
     secondary: {
       main: "#000000"
     }
   },
-  components: {
+  // components: {
     // MuiFormHelperText: {
     //   styleOverrides: {
     //     root: {
@@ -34,7 +34,7 @@ const theme = createTheme({
     //     },
     //   },
     // },
-  },
+  // },
 });
 
 export default theme;

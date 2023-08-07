@@ -12,26 +12,26 @@ interface Props {
 const Product: React.FC<Props> = (props: Props) => {
   return (
     <div className="product">
-      {/* <img
-        src={require(`C:/Users/yahel/OneDrive/שולחן העבודה/BetteRecycle/Front/src/assets/Images/Tsadkani.jpg`)}
+      <img className="product__img"
+        src={`https://medias.hashulchan.co.il/www/uploads/2020/12/shutterstock_658408219-600x600.jpg`}
         alt="ma"
-      /> */}
-      <p className="header niceText">{props.name}</p>
+      />
+      <p className="product__header product__niceText">{props.name}</p>
 
       {props.amount ? (
-        <p className="amount niceText">כמות: {props.amount}</p>
+        <p className="product__amount product__niceText">כמות: {props.amount}</p>
       ) : (
         <></>
       )}
       {props.expartionDate ? (
-        <p className="amount niceText">
+        <p className="product__amount product__niceText">
           תקף עד: {props.expartionDate.toLocaleDateString()}
         </p>
       ) : (
         <></>
       )}
 
-      <button className="price niceText">מימוש ההטבה</button>
+      <button className="product__price product__niceText">מימוש ההטבה</button>
     </div>
   );
 };

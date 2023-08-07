@@ -2,6 +2,7 @@ import { Box, TextField, Typography, Button, IconButton } from "@mui/material"
 import React from "react"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import FriendRequestCard from "../../components/FriendRequestCard/FriendRequestCard";
+import { useNavigate } from "react-router-dom";
 
 export default function FriendRequests() {
     const [names, setNames] = React.useState<string[]>(["Billy", "Joe", "Cooper"])
@@ -15,9 +16,11 @@ export default function FriendRequests() {
         <FriendRequestCard name={name} accept={() => removeRequest(name)} reject={() => removeRequest(name)} />
     ))
 
+    const navigate = useNavigate();
+
     return(
         <Box sx={{ my: 1 }}>
-            <IconButton>
+            <IconButton onClick={() => navigate("/friends")}>
                 <ArrowForwardIosIcon />
             </IconButton>
             <Box sx={{ mt: 5 }}>
