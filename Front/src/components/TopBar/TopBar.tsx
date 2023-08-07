@@ -31,7 +31,7 @@ export default function TopBar() {
           </Box>
         </Box>
       </AppBar>
-      <MuiToolbar sx={{ marginBottom: "1vh" }} />
+      {/* <MuiToolbar sx={{ marginBottom: "1vh" }} /> */}
     </>
   );
 }

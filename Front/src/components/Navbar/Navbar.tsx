@@ -2,9 +2,6 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import "./Navbar.css";
 import { useLocation, useNavigate } from "react-router-dom";
-// import Store from "../../pages/Store/Store";
-// import Home from "../../pages/Home/Home";
-// import Cart from "../../pages/Cart/Cart";
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import HomeIcon from '@mui/icons-material/Home';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
@@ -30,14 +27,14 @@ const actions = [
     to: "/store",
   },
   {
-    label: "Community",
+    label: "חברים",
     icon: <PeopleIcon />,
     to: "/friends",
   }
 ];
 
 const Navbar: React.FC<Props> = (props: Props) => {
-  const [currentRoute, setRoute] = useState(0);
+  const [currentRoute, setRoute] = useState(1);
 
   const [value, setValue] = useState(0);
   const navigate = useNavigate();

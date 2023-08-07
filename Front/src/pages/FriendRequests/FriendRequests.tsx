@@ -12,8 +12,8 @@ export default function FriendRequests() {
         setNames(prev => prev.filter(arrName => arrName !== name))
     }
 
-    const requestCards = names.map(name => (
-        <FriendRequestCard name={name} accept={() => removeRequest(name)} reject={() => removeRequest(name)} />
+    const requestCards = names.map((name, index) => (
+        <FriendRequestCard key={index} name={name} accept={() => removeRequest(name)} reject={() => removeRequest(name)} />
     ))
 
     const navigate = useNavigate();

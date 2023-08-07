@@ -1,15 +1,16 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Box, IconButton, Button } from "@mui/material"
 import UserScoreCard from "../../components/UserScoreCard/UserScoreCard"
 import { NotificationsActive, PersonAdd } from "@mui/icons-material"
 import { useNavigate } from "react-router-dom"
+import { UserContext } from "../../contexts/userContext"
 
 export default function Friends() {
 
     // Everything i write is in English instead of hebrew
     // because i can't change languages with this
     // FUCKING CHROMEBOOK
-        
+    const {user} = useContext(UserContext);
     
     const friendsMock = [
         {
@@ -77,12 +78,12 @@ export default function Friends() {
 
     const [shownScores, setShownScores] = React.useState<string>("friends")
 
-    const friendCards = friendsMock.map((friend) => (
-        <UserScoreCard name={friend.name} points={friend.points} isUser={false}/>
+    const friendCards = friendsMock.map((friend, i) => (
+        <UserScoreCard key={i} name={friend.name} points={friend.points} isUser={false}/>
     ))
 
-    const globalCards = globalMock.map((friend) => (
-        <UserScoreCard name={friend.name} points={friend.points} isUser={false}/>
+    const globalCards = globalMock.map((friend, i) => (
+        <UserScoreCard key={i} name={friend.name} points={friend.points} isUser={false}/>
     ))
 
     return (
@@ -100,7 +101,7 @@ export default function Friends() {
             {shownScores === "friends" && 
             <Box>
                 <Box sx={{ mb: 6 }}>
-                    <UserScoreCard name="Avig Alog" points={831} isUser={true}/>
+                    <UserScoreCard name={user.name} points={user.score} isUser={true}/>
                 </Box>
                 <Box>
                     {friendCards}
@@ -113,7 +114,7 @@ export default function Friends() {
                     {globalCards}
                 </Box>
                 <Box>
-                    <UserScoreCard name="Avig Alog" points={831} isUser={true}/>
+                    <UserScoreCard name={user.name} points={user.score} isUser={true}/>
                 </Box>
             </Box>
             }

@@ -7,8 +7,8 @@ interface IProps {
 
 const defaultUser: IUser = {
   id: 23,
-  name: "shir",
-  gender: "F",
+  name: "Avig Alog",
+  gender: "M",
   credit: 260,
   score: 472,
   birthDate: new Date(2000, 1, 14),
