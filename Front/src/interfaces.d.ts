@@ -22,5 +22,6 @@ interface ICoupon {
   name: string;
   price: number;
   amount: number;
+  code: string;
   image: string;
 }

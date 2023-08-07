@@ -15,13 +15,12 @@ import "./general.css";
 import TopBar from "./components/TopBar/TopBar";
 import "./App.css";
 import UserContextProvider from "./contexts/userContext";
+import Scanner from "./pages/Scanner/Scanner";
 
 type RouteType = {
   path: string;
   element: ReactElement;
 };
-
-
 
 export const routes: RouteType[] = [
   {
@@ -47,6 +46,10 @@ export const routes: RouteType[] = [
   {
     path: "/friends/requests",
     element: <FriendRequests />,
+  },
+  {
+    path: "/scan",
+    element: <Scanner />,
   },
 ];
 

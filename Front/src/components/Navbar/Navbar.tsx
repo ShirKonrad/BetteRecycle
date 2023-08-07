@@ -7,19 +7,25 @@ import HomeIcon from '@mui/icons-material/Home';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import PeopleIcon from '@mui/icons-material/People';
 import { routes } from "../../App";
+import { Recycling } from "@mui/icons-material";
 
 interface Props {}
 
 const actions = [
+  {
+    label: "בית",
+    icon: <HomeIcon />,
+    to: "/",
+  },
   {
     label: "ההטבות שלי",
     icon: <LocalMallIcon />,
     to: "/cart",
   },
   {
-    label: "בית",
-    icon: <HomeIcon />,
-    to: "/",
+    label: "סריקת בקבוקים",
+    icon: <Recycling />,
+    to: "/scan",
   },
   {
     label: "חנות",
@@ -30,11 +36,11 @@ const actions = [
     label: "חברים",
     icon: <PeopleIcon />,
     to: "/friends",
-  }
+  },
 ];
 
 const Navbar: React.FC<Props> = (props: Props) => {
-  const [currentRoute, setRoute] = useState(1);
+  const [currentRoute, setRoute] = useState(0);
 
   const [value, setValue] = useState(0);
   const navigate = useNavigate();
@@ -62,7 +68,6 @@ const Navbar: React.FC<Props> = (props: Props) => {
     setValue((prev) => (actionIndex >= 0 ? actionIndex : prev));
   }, [location.pathname]);
 
-
   return (
     <BottomNavigation
       value={currentRoute}
@@ -79,16 +84,15 @@ const Navbar: React.FC<Props> = (props: Props) => {
           color: "var(--primary-bg-color2)",
         },
       }}
-      showLabels
-    >
+      showLabels>
       {actions.map((action) => (
-          <BottomNavigationAction
-            key={action.to}
-            id={action.label}
-            label={action.label}
-            icon={action.icon}
-          />
-        ))}
+        <BottomNavigationAction
+          key={action.to}
+          id={action.label}
+          label={action.label}
+          icon={action.icon}
+        />
+      ))}
     </BottomNavigation>
   );
 };

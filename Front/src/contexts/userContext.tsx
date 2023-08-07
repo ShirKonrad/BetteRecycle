@@ -7,7 +7,7 @@ interface IProps {
 
 const defaultUser: IUser = {
   id: 23,
-  name: "Avig Alog",
+  name: "אביב אלון",
   gender: "M",
   credit: 260,
   score: 472,
@@ -17,6 +17,7 @@ const defaultUser: IUser = {
       name: "עציץ כלשהו",
       price: 50.0,
       amount: 1,
+      code: "D!GCF09",
       image:
         "https://medias.hashulchan.co.il/www/uploads/2020/12/shutterstock_658408219-600x600.jpg",
     },
@@ -24,6 +25,7 @@ const defaultUser: IUser = {
       name: "הופעה כלשהי",
       price: 80,
       amount: 2,
+      code: "B!GCD1B",
       image:
         "https://medias.hashulchan.co.il/www/uploads/2020/12/shutterstock_658408219-600x600.jpg",
     },
@@ -31,6 +33,7 @@ const defaultUser: IUser = {
       name: "שולחן כלשהו",
       price: 250,
       amount: 1,
+      code: "C!GCA20",
       image:
         "https://medias.hashulchan.co.il/www/uploads/2020/12/shutterstock_658408219-600x600.jpg",
     },
@@ -38,16 +41,17 @@ const defaultUser: IUser = {
       name: "עוד הופעה כלשהי",
       price: 110.0,
       amount: 1,
+      code: "A!GC8FE",
       image:
         "https://medias.hashulchan.co.il/www/uploads/2020/12/shutterstock_658408219-600x600.jpg",
     },
-  ]
+  ],
 };
 
 export const UserContext = createContext({
   user: defaultUser,
-  setUser: (user: IUser) => {}
-})
+  setUser: (user: IUser) => {},
+});
 
 const UserContextProvider: React.FC<IProps> = ({ children }) => {
   const [user, setUser] = useState<IUser>(defaultUser);
@@ -56,15 +60,16 @@ const UserContextProvider: React.FC<IProps> = ({ children }) => {
     setUser((prev: IUser) => {
       return {
         ...prev,
-        credit: prev.credit - credit
+        credit: prev.credit - credit,
       };
     });
   };
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>{children} </UserContext.Provider>
+    <UserContext.Provider value={{ user, setUser }}>
+      {children}{" "}
+    </UserContext.Provider>
   );
 };
 
 export default UserContextProvider;
-

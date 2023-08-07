@@ -23,6 +23,7 @@ const Cart: React.FC<Props> = (props: Props) => {
           price={product.price}
           amount={product.amount}
           image={product.image}
+          code={product.code}
         />
       ))}
     </div>

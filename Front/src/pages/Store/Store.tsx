@@ -92,6 +92,7 @@ const Store: React.FC = () => {
             (newUser.coupons.find((p) => p.name === newProd.name)?.amount ||
               0) + 1,
           price: newProd.price,
+          code: (Math.random() + 1).toString(36).substring(7),
         });
       }
 
@@ -109,7 +110,7 @@ const Store: React.FC = () => {
       });
     }
   };
-  
+
   return (
     <div className="store">
       <div className="store__products">
