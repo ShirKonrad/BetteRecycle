@@ -35,7 +35,7 @@ const products = [
 
 interface Props {}
 
-const Store: React.FC<Props> = (props: Props) => {
+const Cart: React.FC<Props> = (props: Props) => {
   return (
     <div>
       <div className="head">
@@ -57,4 +57,4 @@ const Store: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default Store;
+export default Cart;
