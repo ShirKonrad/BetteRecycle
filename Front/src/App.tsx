@@ -13,14 +13,13 @@ import { Height } from "@mui/icons-material";
 import Store from "./pages/Store/Store";
 import "./general.css";
 import TopBar from "./components/TopBar/TopBar";
-import "./App.css"
+import "./App.css";
+import Scanner from "./pages/Scanner/Scanner";
 
 type RouteType = {
   path: string;
   element: ReactElement;
 };
-
-
 
 export const routes: RouteType[] = [
   {
@@ -47,6 +46,10 @@ export const routes: RouteType[] = [
     path: "/friends/requests",
     element: <FriendRequests />,
   },
+  {
+    path: "/scan",
+    element: <Scanner />,
+  },
 ];
 
 const Router = () => {
@@ -55,28 +58,27 @@ const Router = () => {
       <CacheProvider value={cacheRtl}>
         <ThemeProvider theme={theme}>
           {/* <div dir="rtl"> */}
-            <BrowserRouter>
-            <TopBar/>
+          <BrowserRouter>
+            <TopBar />
             <div className="app__content">
-                <Routes>
-                  {routes.map((route) => (
-                    <Route
+              <Routes>
+                {routes.map((route) => (
+                  <Route
                     key={route.path}
                     path={route.path}
                     element={route.element}
-                    />
-                    ))}
-                </Routes>
-              </div>
-              <div className="app__bottom">
-                <Navbar />
-              </div>
-            </BrowserRouter>
+                  />
+                ))}
+              </Routes>
+            </div>
+            <div className="app__bottom">
+              <Navbar />
+            </div>
+          </BrowserRouter>
           {/* </div> */}
         </ThemeProvider>
       </CacheProvider>
     </div>
-
   );
 };
 

@@ -10,6 +10,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import PeopleIcon from "@mui/icons-material/People";
 import { routes } from "../../App";
+import { Recycling } from "@mui/icons-material";
 
 interface Props {}
 
@@ -24,7 +25,11 @@ const actions = [
     icon: <LocalMallIcon />,
     to: "/cart",
   },
-
+  {
+    label: "סריקת בקבוקים",
+    icon: <Recycling />,
+    to: "/scan",
+  },
   {
     label: "חנות",
     icon: <LocalGroceryStoreIcon />,
