@@ -7,14 +7,16 @@ export default function TopBar() {
     <Box>
       <AppBar
         position="sticky"
-        sx={{ backgroundColor: "var(--primary-bg-color2)" }}>
+        sx={{ backgroundColor: "var(--primary-bg-color2)" }}
+      >
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             p: 1,
-          }}>
+          }}
+        >
           <Box>
             <Box sx={{ display: "flex" }}>
               <MilitaryTech />
