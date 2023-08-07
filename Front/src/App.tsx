@@ -6,6 +6,8 @@ import theme from "./theme";
 import cacheRtl from "./rtl-plugin";
 import Store from "./pages/Store/Store";
 import "./general.css";
+import TopBar from "./components/TopBar/TopBar";
+import "./App.css"
 
 const products: IProduct[] = [
   {
@@ -86,15 +88,21 @@ const Router = () => {
       <ThemeProvider theme={theme}>
         <div dir="rtl">
           <BrowserRouter>
-            <Routes>
-              {routes.map((route) => (
-                <Route
+          <TopBar/>
+          <div className="app__content">
+              <Routes>
+                {routes.map((route) => (
+                  <Route
                   key={route.path}
                   path={route.path}
                   element={route.element}
-                />
-              ))}
-            </Routes>
+                  />
+                  ))}
+              </Routes>
+            </div>
+            <div className="app__bottom">
+              {/* BottomTollbar component */}
+            </div>
           </BrowserRouter>
         </div>
       </ThemeProvider>

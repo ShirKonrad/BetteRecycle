@@ -13,7 +13,7 @@ const Store: React.FC<Props> = (props: Props) => {
 
   return (
     <div className="store">
-      <h2 className="store__header">חנות</h2>
+      {/* <h2 className="store__header">חנות</h2> */}
       <div className="store__products">
         {props.products
           .filter(
