@@ -7,9 +7,10 @@
 
 img{
     border-radius: 3em;
-    height: 3em;
-    width: 3em;
+    height: 2.7em;
+    width: 2.7em;
     margin-right: 0.4em;
+    border: 2px lightgreen solid;
 }
 
 .header{
@@ -29,4 +30,11 @@ img{
     margin-right: 14.7em;
     position: absolute;
     width: 6em;
+    border-radius: 4em;
+    border: 2px lightgreen solid;
+}
+
+.niceText{
+    text-shadow: 0.5px 0.5px grey;
+    color: black;
 }

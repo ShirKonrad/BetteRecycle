@@ -10,22 +10,21 @@ const Navbar: React.FC<Props> = (props: Props) => {
 
   return (
     <BottomNavigation
-      className="navbar"
       value={currentRoute}
       onChange={(event, newValue) => {
-        setRoute(newValue);
         window.location.href = `http://localhost:3000${newValue}`;
+        setRoute(newValue);
       }}
       showLabels
     >
       <BottomNavigationAction label="בית" value={""} icon={<HomeIcon />} />
       <BottomNavigationAction
-        label="חנות"
+        label="ההטבות שלי"
         value={"/cart"}
         icon={<HomeIcon />}
       />
       <BottomNavigationAction
-        label="חברים"
+        label="חנות"
         value={"/store"}
         icon={<HomeIcon />}
       />
