@@ -42,7 +42,7 @@ const Product: React.FC<Props> = (props: Props) => {
           מימוש ההטבה
         </button>
 
-        <div className="flip-card-back">קוד למימוש ההטבה:{props.code}</div>
+        <div className="flip-card-back">קוד למימוש ההטבה: {props.code}</div>
       </div>
     </div>
   );

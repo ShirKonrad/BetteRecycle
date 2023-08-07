@@ -7,14 +7,14 @@ const products = [
     name: "עציץ כלשהו",
     price: 50.0,
     amount: 1,
-    code: "6ABD57",
+    code: "D!GCF09",
     image:
       "C:/Users/yahel/OneDrive/שולחן העבודה/BetteRecycle/Front/src/assets/Images/Tsadkani.jpg",
   },
   {
     name: "הופעה כלשהי",
     price: 80,
-    code: "6ABD57",
+    code: "B!GCD1B",
     expartionDate: new Date(),
     image:
       "C:/Users/yahel/OneDrive/שולחן העבודה/BetteRecycle/Front/src/assets/Images/Tsadkani.jpg",
@@ -23,14 +23,14 @@ const products = [
     name: "שולחן כלשהו",
     price: 250,
     amount: 1,
-    code: "6ABD57",
+    code: "C!GCA20",
     image:
       "C:/Users/yahel/OneDrive/שולחן העבודה/BetteRecycle/Front/src/assets/Images/Tsadkani.jpg",
   },
   {
     name: "עוד הופעה כלשהי",
     price: 110.0,
-    code: "6ABD57",
+    code: "A!GC8FE",
     expartionDate: new Date(),
     image:
       "C:/Users/yahel/OneDrive/שולחן העבודה/BetteRecycle/Front/src/assets/Images/Tsadkani.jpg",

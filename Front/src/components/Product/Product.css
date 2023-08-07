@@ -27,7 +27,7 @@
   .flip-card-back {
     transform: rotateY(180deg);
     position: absolute;
-    margin-right: 8.4em;
+    margin-right: 4.4em;
     margin-top: -2.4em;
   }
 
